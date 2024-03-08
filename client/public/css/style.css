@@ -1,0 +1,601 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/************************************
+MAIN
+*************************************/
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 1rem;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #008080;
+    --text-color: #c0c0c0;
+    --bg-color:   #ffa62f;
+}
+
+body {
+    color: var(--text-color);
+}
+
+section {
+    padding: 2rem 0 2rem;
+}
+
+.container {
+    max-width: 1068px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    padding: 10px 22px;
+    background: var(--main-color);
+    color: #FFFFFF;
+    font-weight: 400;
+}
+
+.btn:hover {
+    background: #ffa63e;
+}
+
+img {
+    width: 100%;
+}
+
+/* Header */
+header {
+    display: block;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+header.shadow {
+    background: black;
+    box-shadow: 2px;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.7rem;
+    font-family: 700;
+    color: var(--text-color);
+    display: flex;
+    padding-right: 15px;
+}
+
+.logo span {
+    color: var(--main-color);
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Nav Bar */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 35px;
+}
+
+#menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+    display: none;
+}
+
+.navbar {
+    display: flex;
+    column-gap: 2rem;
+    align-items: center;
+}
+
+.navbar a {
+    color: var(--text-color);
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.navbar a:hover,
+.navbar .active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+/* Search box */
+.search-box {
+    position: relative;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 5px 10px; /* Increase right padding to accommodate the icon */
+    width: 100%;
+}
+
+
+/* Search input */
+    .search-box input[type="search"] {
+        width: 100%;
+        border: none;
+        background: none;
+        outline: none;
+        font-size: 16px;
+    }
+
+    /* Search button */
+    .search-box button {
+        padding: 8px 8px; /* Adjust padding */
+        margin-left: 10px; /* Add space between input and button */
+        border: none;
+        border-radius: 5px;
+        background-color: var(--main-color); /* Button color */
+        color: white;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        /* Hover effect for button */
+        .search-box button:hover {
+            background-color: #0056b3; /* Darker shade of button color */
+        }
+::placeholder {
+    color: #000000;
+}
+
+
+/************************************
+HOME PAGE
+*************************************/
+.home {
+    max-width: 1400px;
+    margin: auto;
+    width: 100%;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    background: url(../images/background-car.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center left;
+}
+
+.home-text {
+    padding-left: 130px;
+}
+
+.home-text h1 {
+    font-size: 2.4rem;
+}
+
+.home-text span {
+    color: var(--main-color);
+}
+
+.home-text p {
+    font-size: 0.938rem;
+    font-weight: 300;
+    margin: 0.5rem 0 1.2rem;
+}
+
+.response-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+/* Heading Container */
+.heading {
+    text-align: center;
+}
+
+.heading span {
+    font-weight: 500;
+    color: var(--main-color);
+    font-size: 1.9rem;
+}
+.heading h1 {
+    font-size: 1.5rem;
+}
+
+.heading p {
+    font-size: 0.938rem;
+    font-weight: 300;
+}
+
+/* Car Container */
+.cars-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.cars-container .box {
+    flex: 1 1 17rem;
+    position: relative;
+    height: 200px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.cars-container .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.cars-container .box img:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.cars-container .box h2 {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-weight: 400;
+    font-size: 1rem;
+    background: var(--main-color);
+    padding: 8px;
+    border-radius: 0.5rem;
+}
+
+.cars-container .box:hover h2 {
+    background: var(--text-color);
+    color: var(--main-color);
+}
+
+/* About Container */
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.about-img {
+    flex: 1 1 21rem;
+}
+
+.about-text {
+    flex: 1 1 21rem;
+}
+
+.about-text span {
+    font-weight: 500;
+    color: var(--main-color);
+    font-size: 1.9rem;
+}
+
+.about-text h2 {
+    font-size: 1.5rem;
+}
+
+.about-text p {
+    font-size: 0.938rem;
+    margin: 0.5rem 0 1.4rem;
+}
+
+/* Social Container */
+.social {
+    display: flex;
+    align-items: center;
+}
+
+.social a {
+    font-size: 24px;
+    color: var(--bg-color);
+    margin-right: 1rem;
+}
+
+.social a:hover {
+    color: var(--main-color);
+}
+
+/************************************
+CAR LISTING
+*************************************/
+.carList {
+    position: relative;
+    padding-top: 10%;
+}
+
+.carList-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.carList-container .box{
+    flex: 1 1 17rem;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background: #c0c0c0;
+    border-radius: 0.5rem;
+    color:#000000;
+    max-width: 300px;
+}
+
+.carList-container .box img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    object-position: center;
+    margin-bottom: 1-rem;
+}
+
+.carList-container .box h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.carList-container .box span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #6A0136;
+}
+
+.carList-container .box .btn {
+    max-width: 120px;
+    text-align: center;
+}
+
+.carList-container .box .detailsLink {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 1.8rem;
+    right: 1rem;
+    font-size: 1rem;
+    color: #000000;
+}
+
+.carList-container .box .details:hover {
+    color: #6A0136;
+    text-decoration: underline;
+}
+
+/***********************************************************************/
+.detailsModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  .detailsModal-content {
+    background-color: #333; /* Existing style */
+    color: #fff; /* Existing style */
+    margin: 15% auto; /* Existing style */
+    padding: 20px; /* Existing style */
+    border: 1px solid #888; /* Existing style */
+    width: 60%; /* Existing style */
+    text-align: left; /* left alignss all the text inside the modal */
+  }
+
+  /* The Close Button for better visibility */
+  .detailsCloseButton {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .detailsCloseButton:hover,
+  .detailsCloseButton:focus {
+    color: #fff; /* Lighter color for hover/focus */
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+/************************************
+CONFIRMATION MODAL
+*************************************/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Reservation Modal Content */
+  /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.6); /* Darker black w/ opacity for better contrast */
+  }
+  
+  /* Modal Content for better contrast */
+  .modal-content {
+    background-color: #333; /* Existing style */
+    color: #fff; /* Existing style */
+    margin: 15% auto; /* Existing style */
+    padding: 20px; /* Existing style */
+    border: 1px solid #888; /* Existing style */
+    width: 60%; /* Existing style */
+    text-align: center; /* Centers all the text inside the modal */
+  }
+  
+  
+  /* The Close Button for better visibility */
+  .close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-button:hover,
+  .close-button:focus {
+    color: #fff; /* Lighter color for hover/focus */
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Color for the word "Quest" */
+.quest-color {
+    color: #c0c0c0; /* Light grey */
+  }
+  
+  /* Color for the word "Auto" */
+  .auto-color {
+    color: #008080; /* Teal */
+  }
+
+  /* Style for the entire paragraph */
+.pickup-info {
+    color: #ffa62f; /* Orange color for the entire text */
+  }
+  
+  /* Ensure Quest and Auto retain their specific colors */
+  .quest-color {
+    color: #c0c0c0; /* Light grey, as previously set */
+  }
+  
+  .auto-color {
+    color: #008080; /* Teal, as previously set */
+  }
+  
+  
+/************************************
+ABOUT PAGE
+*************************************/
+
+.aboutus-container {
+    color: black;
+}
+
+.aboutus-container .box .details {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 1.8rem;
+    right: 1rem;
+    font-size: 1rem;
+    color: #000000;
+}
+
+.aboutus-container .box img {
+    width: 10%;
+    height: 150px;
+    object-fit: contain;
+    object-position: center;
+    margin-bottom: 1-rem;
+}
+
+/************************************
+FOOTER
+*************************************/
+.footer {
+    background: var(--text-color);
+    color: var(--main-color);
+    border-top: 1px solid var(--main-color);
+    padding: 1rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.footer-container .logo {
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.footer-container .footer-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-box h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.footer-box a,
+.footer-box p {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    padding: 10px;
+    text-align: center;
+    color: #000000;
+    background: var(--main-color);
+}
+
+.carFilter {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    width: 100%;
+    gap: 6px;
+    margin: 0 auto;
+}
+
+.carFilterContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.carFilter--field {
+    flex: 1;
+}
+
+.carFilter--field {
+    flex: 1;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    background: var(--text-color);
+    color: black;
+    font-size: 16px;
+}
