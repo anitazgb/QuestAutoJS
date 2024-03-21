@@ -1,4 +1,5 @@
-export const proxy = "http://localhost:5000"
+export const proxy = "http://questauto.sytes.net"
+// export const proxy = "http://localhost:5000" //local
 const baseUrl = proxy + "/api/v1/"
 
 const baseConfig = {
