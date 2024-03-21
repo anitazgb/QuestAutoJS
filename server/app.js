@@ -30,7 +30,7 @@ app.use(express.json())
 // limit requests
 const limiter = rateLimit({
     skip: () => false, // or add your own logic for skipping rate limiting
-    max: 1000,
+    max: 10000,
     windowMs: 60 * 60 * 100000,
     message: 'Too many requests from this IP, please try again in an hour'
 })
