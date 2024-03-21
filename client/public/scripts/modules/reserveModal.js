@@ -1,4 +1,4 @@
-
+import {renderBasketModalContent, showCount, updateAddToBasketBtn} from "./basket.js";
 
 export const openReserveModal = () => {
     const modal = document.querySelector('#reservationModal')
@@ -13,9 +13,4 @@ export const closeReserveModal = () => {
     })
 }
 
-export const onClickReserveBtn = () => {
-    const reserveBtns = document.querySelectorAll('.reserveBtn')
-    reserveBtns.forEach(item => {
-        item.addEventListener('click',openReserveModal)
-    })
-}
+

@@ -14,7 +14,7 @@ export const renderFilters = ({makes, models, colors}) => {
 
     const renderOption = (item,key) => {
         const value = item?._id || ""
-        const content = item ? toCapitalize(item?.name) : toCapitalize(key)
+        const content = item ? toCapitalize(item.name) : toCapitalize(key)
         return `
         <option value="${value}">${content}</option>
     `

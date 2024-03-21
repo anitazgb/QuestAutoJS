@@ -7,7 +7,7 @@
     --bg-color: #ffa62f;
     --white-color: #fff;
     --black-color: #000;
-    --dark-color: #333;
+    --red-color: #a10000;
     --container-padding: 16px;
     --container-padding-mob: 10px;
     --transition: all .5s;
@@ -42,6 +42,10 @@ body {
     width: 100%;
 }
 
+.hidden {
+    display: none !important;
+}
+
 
 /*text classes*/
 
@@ -73,14 +77,6 @@ body {
 
 .yellowTxt {
     color: var(--bg-color);
-}
-
-.whiteTxt {
-    color: var(--white-color);
-}
-
-.darkTxt {
-    color: var(--dark-color);
 }
 
 
@@ -162,11 +158,18 @@ body {
     color: var(--white-color);
     transition: var(--transition);
     text-transform: uppercase;
+    max-width: 200px;
 }
 
 
 .mainBtn:hover {
     background-color: #ffa63e;
+}
+
+
+.mainBtn_reserved {
+    background-color: var(--bg-color);
+    cursor: default;
 }
 
 /*NAVBAR MENU*/
@@ -205,6 +208,7 @@ body {
 
 .navbar__menuBlock {
     gap: 2rem;
+    width: 100%;
 }
 
 .navbar__menu {
@@ -226,9 +230,9 @@ body {
 }
 
 .navbar__searchBlock {
-
+    width: 100%;
+    min-width: 300px;
 }
-
 
 .navbar__searchbar {
     padding: 5px 10px;
@@ -255,6 +259,141 @@ body {
     font-size: 16px;
     font-weight: 400;
     border-radius: 0 5px 5px 0;
+}
+
+.navbar__basketBlock {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.navbar__basketBtn {
+    border: none;
+    cursor: pointer;
+    background: var(--main-color);
+    border-radius: 5px;
+    padding: 6px 8px;
+}
+
+.navbar__basketImg {
+    width: 20px;
+}
+
+.navbar__basketCountText {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    border-radius: 50%;
+    font-size: 12px;
+    color: var(--white-color);
+    width: 20px;
+    height: 20px;
+    background-color: var(--red-color);
+}
+
+.navbar__distance {
+    width: 100%;
+    height: 82px;
+}
+
+.basketModal {
+    position: absolute;
+    bottom: -30px;
+    transform: translateY(100%);
+    background-color: var(--text-color);
+    right: 0;
+    width: 360px;
+    padding: 8px;
+    border-radius: 25px;
+}
+
+.basketModal__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.basketModal__item {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.basketModal__img {
+    width: 40%;
+    aspect-ratio: 6/4;
+    border-radius: 15px;
+    object-fit: contain;
+    background-color: var(--black-color);
+}
+
+.basketModal__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.basketModal__carNameTxt {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    color: var(--black-color);
+}
+
+.basketModal__priceTxt {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--black-color);
+    text-align: left;
+}
+
+.basketModal__deleteBtn {
+    cursor: pointer;
+    border: none;
+    background-color: var(--red-color);
+    border-radius: 10px;
+    padding: 4px 8px;
+    font-size: 16px;
+    color: var(--white-color);
+    max-width: 100px;
+    width: 100%;
+}
+
+.basketModal__totalPriceTxt {
+    font-size: 16px;
+    color: var(--black-color);
+}
+
+.basketModal__reserveBtn {
+    cursor: pointer;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    border: none;
+    padding: 8px 12px;
+    max-width: 140px;
+    width: 100%;
+    display: block;
+    margin: 8px auto;
+}
+
+.basketModal__reserveBtn:disabled {
+    cursor: default;
+    background-color: #726F6FFF;
+}
+
+.basketModal__emptyBlock {
+    width: 100%;
+    height: 100px;
+    border-radius: 25px;
+    background-color: rgba(128, 128, 128, 0.29);
+}
+
+.basketModal__emptyTxt {
+    color: var(--black-color);
+    font-weight: 700;
+    font-size: 16px;
 }
 
 /*FOOTER*/
@@ -312,7 +451,7 @@ body {
 .mainHeader {
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/background-car.jpg");
+    background-image: url("../images/background-car.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -325,7 +464,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    padding-left: 100px;
+    padding-left: 130px;
 }
 
 .mainHeader__title {
@@ -476,8 +615,9 @@ body {
 
 .carsList {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+    grid-template-columns: repeat(auto-fit, minmax(310px, 350px));
     gap: 2rem;
+    justify-content: center;
 }
 
 
@@ -528,7 +668,7 @@ body {
     max-height: calc(100vh - 100px);
     max-width: 500px;
     width: 100%;
-    background: #008080;
+    background: #333;
     border-radius: 0.5rem;
     padding: 20px;
     z-index: 999999;
@@ -558,7 +698,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     max-height: calc(100vh - 100px);
-    max-width: 600px;
+    max-width: 700px;
     width: 100%;
     background: #333;
     border-radius: 0.5rem;
@@ -644,6 +784,20 @@ body {
         padding-left: 80px;
     }
 
+    .navbar__wrapper {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar__menuBlock {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .navbar__distance {
+        height: 160px;
+    }
+
 }
 
 /*Medium Screen*/
@@ -663,11 +817,6 @@ body {
 
     .navbar {
         padding: 10px 0px;
-    }
-
-    .navbar__wrapper {
-        flex-direction: column;
-        gap: 10px;
     }
 
     .footer__container {
@@ -697,9 +846,10 @@ body {
         font-size: 1.4rem;
     }
 
-    .navbar__menuBlock {
-        flex-direction: column;
-        gap: 0.5rem;
+
+    .basketModal {
+        width: calc(100vw - 30px);
+        max-width: 360px;
     }
 
     .footer__container {
